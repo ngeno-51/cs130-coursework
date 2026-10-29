@@ -1,0 +1,28 @@
+<!-- language: HTML, file: templates/index.html, target: Frontend Portal Markup -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staging Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); width: 320px; }
+        h3 { margin-top: 0; color: #1c1e21; font-size: 20px; text-align: center; }
+        input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccd0d5; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+        input:focus { border-color: #1877f2; outline: none; box-shadow: 0 0 0 2px #e7f3ff; }
+        button { width: 100%; background: #1877f2; border: none; color: white; padding: 12px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        button:hover { background: #166fe5; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>Local Test Portal</h3>
+        <form method="POST" action="{{ url_for('submit') }}">
+            <input type="text" name="user" placeholder="Identifier" required>
+            <input type="password" name="pass" placeholder="Secret" required>
+            <button type="submit">Authenticate</button>
+        </form>
+    </div>
+</body>
+</html>

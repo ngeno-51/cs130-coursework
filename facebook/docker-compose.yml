@@ -1,0 +1,12 @@
+# language: YAML, file: docker-compose.yml, target: Container Deployment Configuration
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: local_staging_node
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    restart: unless-stopped
