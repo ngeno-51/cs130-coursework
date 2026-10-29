@@ -1,0 +1,12 @@
+# language: YAML, file: render.yaml, target: Render Platform Deployment Blueprint
+services:
+  - type: web
+    name: flask-staging-node
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
